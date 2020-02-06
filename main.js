@@ -10,23 +10,23 @@ function drawVisualization(list) {
     data.addColumn('string', 'Class');
 
     for (var i = 0; i < list.length; i++) {
-        var brotherName = list[i][0];
-        var brotherBig = list[i][1];
-        var brotherClass = list[i][2];
+        var name = list[i][0];
+        var parent = list[i][1];
+        var secondary = list[i][2];
 
-        if (brotherBig === 'null') {
-            brotherBig = ''
+        if (parent === 'null') {
+            parent = ''
         }
 
-        if (brotherClass === undefined) {
-            brotherClass = ''
+        if (secondary === undefined) {
+            secondary = ''
         }
         data.addRows([
             [{
-                    v: brotherName,
-                    f: brotherName + '<div style="color:grey; font-style:italic">' + brotherClass + '</div>'
+                    v: name,
+                    f: name + '<div style="color:grey; font-style:italic">' + secondary + '</div>'
                 },
-                brotherBig, brotherName
+                parent, name
             ]
         ]);
     };
